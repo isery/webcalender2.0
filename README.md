@@ -7,7 +7,7 @@ A Basic Webcalender built on Node.js with MongoDB and Socket.io
 npm install
 ```
 
-If you want to pull it, you need to set up a config.js file:
+If you want to pull it, you need to set up a config.js file for MongoDB:
 
 ```javascript
 exports.connection = 'someone@somewhere:someport/someurl';
