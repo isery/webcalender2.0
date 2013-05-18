@@ -1,0 +1,66 @@
+head
+    title= title
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js')
+    script(src='/javascripts/webcalender.js')
+    script(src='/javascripts/EventTrigger.js')
+    script(src='/javascripts/history.js/scripts/bundled/html4+html5/jquery.history.js')
+    script(src='/socket.io/socket.io.js')
+
+    script
+      $(document).ready(function() {
+      //those veriables are sent from the node server
+      var yr=!{year};
+      var mt=!{month};
+      initialice(yr,mt);
+      });
+  body
+    #webcalender
+    #getIcs
+     ul
+      li
+       a(href='/tmp/test.ics') Download iCal
+    #eventPanel
+      #eventTitle
+        span#eventClose x
+        | Titelleiste
+      #eventBody
+    #newPanel
+      #newTitle
+        span#newClose x
+        | Titelleiste
+      #newBody
+        form#newForm
+          fieldset
+            legend Nachricht
+            label(for='headline') Überschrift
+            input#headline(type='text', name='headline')
+            br
+            label(for='datum') Datum
+            input#datum(type='text', name='datum')
+            br
+            label(for='text') Text
+            textarea#text(name='text')
+            ul
+             li
+              span#newBtnSubmit speichern
+    #editPanel
+      #editTitle
+        span#editClose x
+        | Titelleiste
+      #editBody
+        form#editForm
+          fieldset
+            legend Nachricht
+            label(for='headline') Überschrift*
+            input#headline2(type='text', name='headline')
+            br
+            label(for='datum') Datum*
+            input#datum2(type='text', name='datum')
+            br
+            label(for='text') Text*
+            textarea#text2(name='text')
+            input#objectId(type='hidden', name='id')
+            ul
+             li
+              span#edit speichern
+    #footer Michael Hettegger Qualifikationsprojekt MultimediaTechnology Fachhochschule Salzburg
